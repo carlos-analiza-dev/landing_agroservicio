@@ -1,7 +1,7 @@
 export interface CTA {
   label: string;
   url: string;
-  variant: "primary" | "secondary" | "third";
+  variant: string;
 }
 
 export interface InicioData {

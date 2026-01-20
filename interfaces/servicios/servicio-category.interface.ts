@@ -27,6 +27,16 @@ export interface ServiciosCategory {
   publishedAt: string;
 }
 
+export interface IndustriaCategory {
+  id: number;
+  documentId: string;
+  nombre: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+}
+
 export interface Service {
   id: number;
   documentId: string;
@@ -40,6 +50,7 @@ export interface Service {
   problemas: SimpleItem[];
   cta: CTA[];
   servicios_category: ServiciosCategory;
+  industrias_id: IndustriaCategory;
 }
 
 export interface ApiResponse {

@@ -5,6 +5,7 @@ import ResumenServicios from "@/app/servicios/[id]/ui/ResumenServicios";
 import ServiciosById from "@/app/servicios/[id]/ui/ServiciosById";
 import {
   CTA,
+  IndustriaCategory,
   ServiciosCategory,
   SimpleItem,
 } from "@/interfaces/servicios/servicio-category.interface";
@@ -30,6 +31,7 @@ interface Props {
     problemas: SimpleItem[];
     cta: CTA[];
     servicios_category: ServiciosCategory;
+    industrias_id: IndustriaCategory;
   }[];
 }
 

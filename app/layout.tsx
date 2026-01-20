@@ -76,7 +76,7 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col">
           <NavBar />
-          <main className="grow">{children}</main>
+          <main className="grow mt-20">{children}</main>
           <Footer />
         </div>
         <WhatsAppFloatingButton />

@@ -11,7 +11,7 @@ interface Props {
     mensaje: string;
   };
   handleChange: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => void;
   isSubmitting: boolean;
 }
@@ -81,11 +81,15 @@ const FormContacto = ({
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white"
           >
             <option value="">Selecciona un asunto</option>
-            <option value="presupuesto">Solicitud de Presupuesto</option>
-            <option value="consulta">Consulta General</option>
-            <option value="soporte">Soporte Técnico</option>
-            <option value="colaboracion">Colaboración</option>
-            <option value="empleo">Oportunidades de Empleo</option>
+            <option value="Solicitud de Presupuesto">
+              Solicitud de Presupuesto
+            </option>
+            <option value="Consulta General">Consulta General</option>
+            <option value="Soporte Técnico">Soporte Técnico</option>
+            <option value="Colaboración">Colaboración</option>
+            <option value="Oportunidades de Empleo">
+              Oportunidades de Empleo
+            </option>
           </select>
         </div>
       </div>

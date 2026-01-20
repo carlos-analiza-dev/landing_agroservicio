@@ -5,7 +5,7 @@ const { NEXT_PUBLIC_STRAPI_HOST } = process.env;
 
 export async function getServicioByCategoriaId(categoryId: number) {
   const res: PaginatedApiResponse = await query(
-    `servicio-by-ids?filters[servicios_category][id][$eq]=${categoryId}&populate=images&populate=incluye&populate=problemas&populate=cta&populate=servicios_category`,
+    `servicio-by-ids?filters[servicios_category][id][$eq]=${categoryId}&populate=images&populate=incluye&populate=problemas&populate=cta&populate=servicios_category&populate=industrias_id`,
   );
 
   return res.data.map((service) => ({

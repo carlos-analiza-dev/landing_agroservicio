@@ -3,11 +3,12 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_NUMBER;
-const MESSAGE = "Hola, me gustaría recibir más información";
+const MESSAGE =
+  "Hola, visité su sitio web y me gustaría recibir más información sobre sus servicios. ¡Gracias!";
 
 const WhatsAppFloatingButton = () => {
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    MESSAGE
+    MESSAGE,
   )}`;
 
   return (

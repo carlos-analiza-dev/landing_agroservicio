@@ -39,6 +39,24 @@ const ContactoClient = ({ contacto, categorias_servicios }: Props) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const message = `
+ *Nuevo contacto desde el sitio web*
+
+Nombre: ${formData.nombre}
+Email: ${formData.email}
+Teléfono: ${formData.telefono || "No proporcionado"}
+Asunto: ${formData.asunto}
+
+Mensaje:
+${formData.mensaje}
+  `;
+
+    const whatsappUrl = `https://wa.me/${process.env.NEXT_PUBLIC_NUMBER}?text=${encodeURIComponent(
+      message.trim(),
+    )}`;
+
+    window.open(whatsappUrl, "_blank");
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);

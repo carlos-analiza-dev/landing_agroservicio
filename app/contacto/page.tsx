@@ -7,10 +7,13 @@ const ContactoPage = async () => {
   const categorias_servicios = await getCategoryServices();
 
   return (
-    <ContactoClient
-      contacto={contacto}
-      categorias_servicios={categorias_servicios}
-    />
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
+      {" "}
+      <ContactoClient
+        contacto={contacto}
+        categorias_servicios={categorias_servicios}
+      />
+    </div>
   );
 };
 

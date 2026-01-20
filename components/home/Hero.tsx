@@ -42,8 +42,8 @@ const Hero = async () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8">
-            {ctas?.map((cta) => (
-              <ButtonLink key={cta.url} cta={cta} />
+            {ctas?.map((cta, index) => (
+              <ButtonLink key={index} cta={cta} />
             ))}
           </div>
         </div>

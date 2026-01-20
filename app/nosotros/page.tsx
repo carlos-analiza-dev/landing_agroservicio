@@ -5,19 +5,13 @@ import PresentacionServicios from "./ui/PresentacionServicios";
 import Trayectoria from "./ui/Trayectoria";
 import ValoresSection from "./ui/ValoresSection";
 import EquipoSection from "./ui/EquipoSection";
-import LogrosSection from "./ui/LogrosSection";
+import LogrosSection from "@/components/Logros";
+import { logros } from "@/data/logros";
 
 const NosotrosPage = async () => {
   const { data } = await getInfoNosotros();
   const { data: valores } = await getValoresNosotros();
   const equipo = await getEquipoNosotros();
-
-  const logros = [
-    { numero: "50+", texto: "Clientes satisfechos" },
-    { numero: "100+", texto: "Proyectos completados" },
-    { numero: "15+", texto: "Años de experiencia" },
-    { numero: "24/7", texto: "Soporte técnico" },
-  ];
 
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">

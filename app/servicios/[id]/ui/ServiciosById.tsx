@@ -1,5 +1,6 @@
 import {
   CTA,
+  IndustriaCategory,
   ServiciosCategory,
   SimpleItem,
 } from "@/interfaces/servicios/servicio-category.interface";
@@ -25,6 +26,7 @@ interface Props {
     problemas: SimpleItem[];
     cta: CTA[];
     servicios_category: ServiciosCategory;
+    industrias_id: IndustriaCategory;
   };
 }
 
@@ -36,13 +38,13 @@ const ServiciosById = ({ servicio }: Props) => {
       className="scroll-mt-20"
     >
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
-        <div className="p-8 bg-linear-to-r from-blue-50 to-indigo-50">
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+        <div className="p-8 rounded-2xl bg-linear-to-r from-blue-50 to-indigo-50 border border-blue-100 shadow-sm">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 bg-white rounded-lg shadow-sm">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-white rounded-xl shadow-sm">
                   <svg
-                    className="w-6 h-6 text-blue-600"
+                    className="w-7 h-7 text-blue-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -51,33 +53,32 @@ const ServiciosById = ({ servicio }: Props) => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2"
                     />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">
-                  {servicio.title}
-                </h2>
-              </div>
-              <div className="flex flex-wrap gap-3 mt-4">
-                <span
-                  className={`px-3 py-1 rounded-full text-sm font-medium ${servicio.isActive ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}`}
-                >
-                  {servicio.isActive ? "✓ Activo" : "Inactivo"}
-                </span>
-                {servicio.updatedAt && (
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                    Actualizado:{" "}
-                    {new Date(servicio.updatedAt).toLocaleDateString("es-ES")}
-                  </span>
-                )}
+
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900 leading-tight">
+                    {servicio.title}
+                  </h2>
+
+                  <p className="text-sm text-gray-600 mt-1">
+                    <span className="font-medium">
+                      {servicio.servicios_category.title}
+                    </span>
+                    {" · "}
+                    <span>{servicio.industrias_id.nombre}</span>
+                  </p>
+                </div>
               </div>
             </div>
-            {servicio.cta && servicio.cta.length > 0 && (
-              <div className="shrink-0">
+
+            {servicio.cta?.length > 0 && (
+              <div className="shrink-0 self-start lg:self-center">
                 <a
                   href={servicio.cta[0].url}
-                  className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-7 py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
                 >
                   {servicio.cta[0].label}
                   <svg
